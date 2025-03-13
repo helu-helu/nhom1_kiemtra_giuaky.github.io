@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Website</title>
+    <style>/* Định dạng chung */
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #0f2027, #203a43, #2c5364); /* Gradient xanh dương đậm */
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            color: white;
+        }
+        
+        .container {
+            width: 80%;
+            margin: auto;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            margin-top: 50px;
+            backdrop-filter: blur(10px);
+        }
+        
+        /* Header */
+        header {
+            background: #1e3c72;
+            color: white;
+            padding: 20px 0;
+            border-radius: 10px 10px 0 0;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        header h1 {
+            margin: 0;
+            font-size: 26px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Phần Về Chúng Tôi */
+        .about {
+            margin: 20px 0;
+        }
+        
+        .about h2 {
+            color: #00d9ff;
+        }
+        
+        /* Thành viên */
+        .team {
+            text-align: center;
+        }
+        
+        .team-members {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .member {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            border-radius: 10px;
+            width: 250px;
+            box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease-in-out;
+            color: white;
+        }
+        
+        .member:hover {
+            transform: scale(1.05);
+            background: rgba(0, 0, 0, 0.5);
+        }
+        
+        .member h3 {
+            color: #00d9ff;
+        }
+        
+        .member a {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 12px;
+            text-decoration: none;
+            background: #00d9ff;
+            color: black;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        
+        .member a:hover {
+            background: #008fb3;
+        }
+        
+        /* Thông tin người dùng */
+        .profile-img {
+            width: 150px;
+            border-radius: 50%;
+            border: 3px solid #00d9ff;
+            margin-bottom: 10px;
+        }
+        
+        .container h2 {
+            color: #00d9ff;
+        }
+        
+        /* Đăng nhập */
+        .login-container {
+            width: 300px;
+            margin: auto;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            margin-top: 50px;
+        }
+        
+        .login-container input {
+            width: 90%;
+            padding: 8px;
+            margin: 10px 0;
+            border: 1px solid #00d9ff;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            outline: none;
+        }
+        
+        .login-container input::placeholder {
+            color: #bbb;
+        }
+        
+        .login-container button {
+            width: 100%;
+            padding: 10px;
+            background: #00d9ff;
+            color: black;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .login-container button:hover {
+            background: #008fb3;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="profile">
+            <img class="profile-img" src="../assets/images/avata_voleanhtien.jpg" alt="Avatar">
+            <h2>Võ Lê Anh Tiến - 2180605809</h2>
+            <p>Sở thích: Chơi game</p>
+            <p>Định hướng: <span class="highlight">Animation Lead</span></p>
+            <p>GPA: <span class="highlight">3.56</span></p>
+        </div>
+        
+        <div class="section about">
+            <h3>Kỹ năng đạt được</h3>
+            <div class="skills team-members">
+                <div class="member">Lập trình</div>
+                <div class="member">Thiết kế UI/UX</div>
+                <div class="member">Game design</div>
+                <div class="member">3D modeling</div>
+                <div class="member">Animation</div>
+                <div class="member">Video editing</div>
+                <div class="member">Sound design</div>
+                <div class="member">Project management</div>
+            </div>
+        </div>
+        
+        <div class="section projects" style="text-align: center;">
+            <h3>Dự án cá nhân</h3>
+            <div class="team-members" style="display: flex; flex-direction: column; align-items: center;">
+                <p class="member">GAME 2D DOOR</p>
+                <p class="member">GAME 3D ELYSIA</p>
+                <p class="member">GAME 2D Travel to the Small World</p>
+            </div>
+        </div>
+        
+        <div class="section contact">
+            <h3>Liên hệ</h3>
+            <p>Email: <a href="mailto:vtshinz2k3@gmail.com">vtshinz2k3@gmail.com</a></p>
+            <p>GitHub: <a href="https://github.com/Tien2180604444/VoLeAnhTien_nhom1_kiemtra_giuaky.github.io.git" target="_blank">Xem GitHub</a></p>
+        </div>
+    </div>
+</body>
+</html>
