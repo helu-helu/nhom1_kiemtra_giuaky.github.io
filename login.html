@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Nhập</title>
+</head>
+
+<body>
+    <div class="login-container">
+        <h2>Đăng Nhập</h2>
+        <input type="text" id="username" placeholder="Tên đăng nhập">
+        <input type="password" id="password" placeholder="Mật khẩu">
+        <button onclick="login()">Đăng Nhập</button>
+        <p id="message"></p>
+    </div>
+
+    <script>
+        const users = {
+            "hiep": "123456",
+            "bao": "password1",
+            "minh": "pass123",
+            "tien": "tien2024",
+            "anh": "anh12345"
+        };
+
+        function login() {
+            let username = document.getElementById("username").value.toLowerCase();
+            let password = document.getElementById("password").value;
+            let message = document.getElementById("message");
+
+            if (users[username] && users[username] === password) {
+                message.style.color = "green";
+                message.textContent = "Đăng nhập thành công!";
+                setTimeout(() => {
+                    window.location.href = "index.html"; // Chuyển hướng sau khi đăng nhập thành công
+                }, 1000); // Đợi 1 giây để hiển thị thông báo rồi chuyển trang
+            } else {
+                message.style.color = "red";
+                message.textContent = "Tên đăng nhập hoặc mật khẩu sai!";
+            }
+        }
+
+    </script>
+</body>
+
+</html>

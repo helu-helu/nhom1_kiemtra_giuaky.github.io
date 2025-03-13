@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thông Tin Người Dùng</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f4f4; text-align: center; }
+        .container { margin-top: 50px; }
+        .profile-img { width: 150px; border-radius: 50%; }
+    </style>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Thông Tin Người Dùng</h1>
+    <div class="container" id="userInfo"></div>
+
+    <script>
+        const members = {
+            "hiep": { name: "Nguyễn Đại Hiệp", mssv: "2180605809", class: "21DTHC2", dob: "01/01/2000", major: "Công nghệ thông tin", img: "images/profile5.webp", 
+                details: "Trong 4 năm học đại học, Hiệp đã đạt được nhiều thành tích xuất sắc trong lập trình và nghiên cứu AI. Tham gia nhiều cuộc thi lập trình và đạt giải cao." },
+            "bao": { name: "Nguyễn Gia Bảo", mssv: "2180603766", class: "21DTHC2", dob: "25/09/2003", major: "Công nghệ thông tin", img: "images/profile3.webp", 
+                details: "Bảo là một designer tài năng, có nhiều đóng góp trong lĩnh vực UI/UX. Trong suốt 4 năm học, Bảo đã làm việc với nhiều dự án thiết kế web và ứng dụng." },
+            "minh": { name: "Đoàn Văn Minh", mssv: "123458", class: "21DTHC2", dob: "03/03/2000", major: "Công nghệ thông tin", img: "images/profile4.webp", 
+                details: "Minh chuyên về phát triển phần mềm, đặc biệt là backend. Đã tham gia nhiều dự án phần mềm lớn và có kinh nghiệm làm việc với nhiều công nghệ hiện đại." },
+            "tien": { name: "Võ Lê Annh Tiến", mssv: "2180604444", class: "21DTHC2", dob: "04/04/2000", major: "Công nghệ thông tin", img: "images/profile1.webp", 
+                details: "Tiến là một quản lý nhóm xuất sắc, dẫn dắt nhóm qua nhiều dự án quan trọng. Có kinh nghiệm tổ chức, quản lý công việc và điều phối nhóm phát triển phần mềm." },
+            "anh": { name: "Lê Hồng Anh", mssv: "2180606387", class: "21DTHC2", dob: "05/05/2000", major: "Công nghệ thông tin", img: "images/profile2.webp", 
+                details: "Anh chuyên về bảo mật hệ thống, có kiến thức sâu rộng về an ninh mạng. Trong 4 năm học, Anh đã thực hiện nhiều nghiên cứu và phát triển các giải pháp bảo mật hiệu quả." }
+        };
+
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        const username = getQueryParam("user");
+        const userInfo = document.getElementById("userInfo");
+
+        if (username && members[username]) {
+            const user = members[username];
+            userInfo.innerHTML = `
+                <img src="${user.img}" alt="${user.name}" class="profile-img">
+                <h2>${user.name}</h2>
+                <p><strong>MSSV:</strong> ${user.mssv}</p>
+                <p><strong>Lớp:</strong> ${user.class}</p>
+                <p><strong>Ngày sinh:</strong> ${user.dob}</p>
+                <p><strong>Chuyên ngành:</strong> ${user.major}</p>
+                <p><strong>Chi tiết:</strong> ${user.details}</p>
+                <a href="login.html">Đăng xuất</a>
+            `;
+        } else {
+            userInfo.innerHTML = "<p style='color: red;'>Người dùng không tồn tại!</p>";
+        }
+    </script>
+</body>
+</html>
